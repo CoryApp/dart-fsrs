@@ -65,12 +65,12 @@ class FSRS {
   void _initDS(SchedulingCards s) {
     s.again.difficulty = _initDifficulty(Rating.again.val);
     s.again.stability = _initStability(Rating.again.val);
-    s.hard.difficulty = _initDifficulty(Rating.hard.val);
-    s.hard.stability = _initStability(Rating.hard.val);
+    // s.hard.difficulty = _initDifficulty(Rating.hard.val);
+    // s.hard.stability = _initStability(Rating.hard.val);
     s.good.difficulty = _initDifficulty(Rating.good.val);
     s.good.stability = _initStability(Rating.good.val);
-    s.easy.difficulty = _initDifficulty(Rating.easy.val);
-    s.easy.stability = _initStability(Rating.easy.val);
+    // s.easy.difficulty = _initDifficulty(Rating.easy.val);
+    // s.easy.stability = _initStability(Rating.easy.val);
   }
 
   double _initStability(int r) {
@@ -100,8 +100,8 @@ class FSRS {
   }
 
   double _nextRecallStability(double d, double s, double r, Rating rating) {
-    final hardPenalty = (rating == Rating.hard) ? p.w[15] : 1;
-    final easyBonus = (rating == Rating.easy) ? p.w[16] : 1;
+    final hardPenalty = 1;
+    final easyBonus = 1;
     return s *
         (1 +
             exp(p.w[8]) *
@@ -123,14 +123,14 @@ class FSRS {
       SchedulingCards s, double lastD, double lastS, double retrievability) {
     s.again.difficulty = _nextDifficulty(lastD, Rating.again.val);
     s.again.stability = _nextForgetStability(lastD, lastS, retrievability);
-    s.hard.difficulty = _nextDifficulty(lastD, Rating.hard.val);
-    s.hard.stability =
-        _nextRecallStability(lastD, lastS, retrievability, Rating.hard);
+    // s.hard.difficulty = _nextDifficulty(lastD, Rating.hard.val);
+    // s.hard.stability =
+    //     _nextRecallStability(lastD, lastS, retrievability, Rating.hard);
     s.good.difficulty = _nextDifficulty(lastD, Rating.good.val);
     s.good.stability =
         _nextRecallStability(lastD, lastS, retrievability, Rating.good);
-    s.easy.difficulty = _nextDifficulty(lastD, Rating.easy.val);
-    s.easy.stability =
-        _nextRecallStability(lastD, lastS, retrievability, Rating.easy);
+    // s.easy.difficulty = _nextDifficulty(lastD, Rating.easy.val);
+    // s.easy.stability =
+    //     _nextRecallStability(lastD, lastS, retrievability, Rating.easy);
   }
 }

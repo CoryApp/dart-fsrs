@@ -19,9 +19,9 @@ enum State {
 
 enum Rating {
   again(1),
-  hard(2),
-  good(3),
-  easy(4);
+  good(2);
+  // hard(2),
+  // easy(4);
 
   const Rating(this.val);
 
@@ -149,18 +149,18 @@ class SchedulingCards {
           again,
           ReviewLog(Rating.again, again.scheduledDays, card.elapsedDays, now,
               card.state)),
-      Rating.hard: SchedulingInfo(
-          hard,
-          ReviewLog(Rating.hard, hard.scheduledDays, card.elapsedDays, now,
-              card.state)),
+      // Rating.hard: SchedulingInfo(
+      //     hard,
+      //     ReviewLog(Rating.hard, hard.scheduledDays, card.elapsedDays, now,
+      //         card.state)),
       Rating.good: SchedulingInfo(
           good,
           ReviewLog(Rating.good, good.scheduledDays, card.elapsedDays, now,
               card.state)),
-      Rating.easy: SchedulingInfo(
-          easy,
-          ReviewLog(Rating.easy, easy.scheduledDays, card.elapsedDays, now,
-              card.state)),
+      // Rating.easy: SchedulingInfo(
+      //     easy,
+      //     ReviewLog(Rating.easy, easy.scheduledDays, card.elapsedDays, now,
+      //         card.state)),
     };
   }
 }

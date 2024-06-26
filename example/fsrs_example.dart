@@ -10,24 +10,24 @@ void main() {
 
   // There are four ratings:
   Rating.again; // forget; incorrect response
-  Rating.hard; // recall; correct response recalled with serious difficulty
+  // Rating.hard; // recall; correct response recalled with serious difficulty
   Rating.good; // recall; correct response after a hesitation
-  Rating.easy; // recall; perfect response
+  // Rating.easy; // recall; perfect response
 
   // Get the new state of card for each rating:
   var cardAgain = schedulingCards[Rating.again]!.card;
-  var cardHard = schedulingCards[Rating.hard]!.card;
+  // var cardHard = schedulingCards[Rating.hard]!.card;
   var cardGood = schedulingCards[Rating.good]!.card;
-  var cardEasy = schedulingCards[Rating.easy]!.card;
+  // var cardEasy = schedulingCards[Rating.easy]!.card;
 
   // Get the scheduled days for each rating:
   cardAgain.scheduledDays;
-  cardHard.scheduledDays;
+  // cardHard.scheduledDays;
   cardGood.scheduledDays;
-  cardEasy.scheduledDays;
+  // cardEasy.scheduledDays;
 
   // Update the card after rating `Good`:
-  card = schedulingCards[Rating.easy]!.card;
+  // card = schedulingCards[Rating.easy]!.card;
 
   // Get the review log after rating `Good`:
   // ignore: unused_local_variable
